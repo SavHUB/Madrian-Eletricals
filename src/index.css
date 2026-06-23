@@ -1,0 +1,341 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Plus Jakarta Sans", "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+  
+  --color-onyx: var(--site-bg);
+  --color-slate-card: var(--card-bg);
+  --color-volt: var(--volt);
+  --color-amber-gold: var(--amber-gold);
+  
+  --color-theme-text-primary: var(--text-primary);
+  --color-theme-text-secondary: var(--text-secondary);
+  --color-theme-text-muted: var(--text-muted);
+  --color-theme-border: var(--border-subtle);
+}
+
+:root {
+  --scroll-y: 0px;
+  
+  /* Theme variables for Dark Mode (Default Onyx) */
+  --site-bg: #050505;
+  --text-primary: #F1F5F9;
+  --text-secondary: rgba(255, 255, 255, 0.6);
+  --text-muted: rgba(255, 255, 255, 0.4);
+  --border-subtle: rgba(255, 255, 255, 0.05);
+  --border-glow: rgba(255, 255, 255, 0.1);
+  --card-bg: rgba(255, 255, 255, 0.03);
+  --card-bg-hover: rgba(255, 255, 255, 0.05);
+  --glass-nav-bg: rgba(5, 5, 5, 0.65);
+  --glass-panel-heavy-bg: rgba(5, 5, 5, 0.85);
+  --amber-gold: #F59E0B;
+  --volt: #10B981;
+  --glow-opacity: 0.05;
+}
+
+html.light {
+  /* Theme variables for Light Luxury Mode */
+  --site-bg: #F8F9FB; /* Luxury light platinum-warm */
+  --text-primary: #0B0F19; /* Deep slate */
+  --text-secondary: rgba(11, 15, 25, 0.7); /* Medium slate */
+  --text-muted: rgba(11, 15, 25, 0.45); /* Soft slate/grey */
+  --border-subtle: rgba(11, 15, 25, 0.06);
+  --border-glow: rgba(11, 15, 25, 0.1);
+  --card-bg: rgba(255, 255, 255, 0.65); /* Richer glass reflection in light */
+  --card-bg-hover: rgba(255, 255, 255, 0.85);
+  --glass-nav-bg: rgba(248, 249, 251, 0.8);
+  --glass-panel-heavy-bg: rgba(255, 255, 255, 0.92);
+  --amber-gold: #D97706; /* Slightly deeper luxury amber for perfect readability in light mode */
+  --volt: #059669; /* Slightly deeper green for contrast */
+  --glow-opacity: 0.08;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    background-color: var(--site-bg);
+    color: var(--text-primary);
+  }
+}
+
+/* Smooth transition for theme colors on core elements */
+body, header, footer, section, div, h1, h2, h3, h4, p, span, a, button, input, select, textarea, label {
+  transition-property: background-color, border-color, color, text-decoration-color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+  transition-duration: 500ms;
+}
+
+/* Custom radial and linear gradient backgrounds */
+.bg-mesh-glow {
+  background-image: 
+    radial-gradient(circle at 15% 15%, rgba(245, 158, 11, var(--glow-opacity, 0.03)) 0%, transparent 45%),
+    radial-gradient(circle at 85% 85%, rgba(16, 185, 129, var(--glow-opacity, 0.03)) 0%, transparent 45%);
+}
+
+@keyframes radar-pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(245, 158, 11, 0.5);
+  }
+  70% {
+    box-shadow: 0 0 0 18px rgba(245, 158, 11, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(245, 158, 11, 0);
+  }
+}
+
+.animate-radar {
+  animation: radar-pulse 1.8s infinite cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes volt-pulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(0.9);
+  }
+}
+
+.animate-volt-pulse {
+  animation: volt-pulse 2s infinite ease-in-out;
+}
+
+/* Glassmorphism custom blur classes matching Immersive UI */
+.glass-panel {
+  background: var(--card-bg);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--border-subtle);
+}
+
+.glass-panel-heavy {
+  background: var(--glass-panel-heavy-bg);
+  backdrop-filter: blur(28px);
+  -webkit-backdrop-filter: blur(28px);
+  border: 1px solid var(--border-glow);
+}
+
+.glass-nav {
+  background: var(--glass-nav-bg);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+/* Custom fine scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--site-bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border-glow);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--amber-gold);
+}
+
+/* Parallax scroll effects */
+:root {
+  --scroll-y: 0px;
+}
+
+.parallax-glow-1 {
+  transform: translateY(calc(var(--scroll-y, 0px) * 0.18));
+  will-change: transform;
+}
+
+.parallax-glow-2 {
+  transform: translateY(calc(var(--scroll-y, 0px) * 0.08));
+  will-change: transform;
+}
+
+.parallax-glow-3 {
+  transform: translateY(calc(var(--scroll-y, 0px) * 0.12));
+  will-change: transform;
+}
+
+/* Scroll reveal card utility */
+.reveal-card {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1), transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal-card.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Lottie-style Success Animation classes */
+@keyframes lottie-circle-draw {
+  0% {
+    stroke-dashoffset: 290;
+    transform: rotate(-90deg);
+  }
+  50% {
+    stroke-dashoffset: 0;
+    transform: rotate(0deg);
+  }
+  100% {
+    stroke-dashoffset: 0;
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes lottie-check-draw {
+  0% {
+    stroke-dashoffset: 80;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes lottie-scale-pop {
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  40% {
+    transform: scale(1.1);
+  }
+  60% {
+    transform: scale(0.95);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes lottie-spark-1 {
+  0% {
+    transform: translate(0, 0) scale(0);
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-28px, -28px) scale(1);
+    opacity: 0;
+  }
+}
+
+@keyframes lottie-spark-2 {
+  0% {
+    transform: translate(0, 0) scale(0);
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate(28px, -28px) scale(1);
+    opacity: 0;
+  }
+}
+
+@keyframes lottie-spark-3 {
+  0% {
+    transform: translate(0, 0) scale(0);
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate(28px, 28px) scale(1);
+    opacity: 0;
+  }
+}
+
+@keyframes lottie-spark-4 {
+  0% {
+    transform: translate(0, 0) scale(0);
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-28px, 28px) scale(1);
+    opacity: 0;
+  }
+}
+
+@keyframes lottie-spark-5 {
+  0% {
+    transform: translate(0, 0) scale(0);
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate(0, -36px) scale(1);
+    opacity: 0;
+  }
+}
+
+@keyframes lottie-spark-6 {
+  0% {
+    transform: translate(0, 0) scale(0);
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate(0, 36px) scale(1);
+    opacity: 0;
+  }
+}
+
+.animate-lottie-pop {
+  animation: lottie-scale-pop 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-lottie-circle {
+  stroke-dasharray: 290;
+  stroke-dashoffset: 290;
+  transform-origin: center;
+  animation: lottie-circle-draw 1.2s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+.animate-lottie-check {
+  stroke-dasharray: 80;
+  stroke-dashoffset: 80;
+  animation: lottie-check-draw 0.65s cubic-bezier(0.25, 1, 0.5, 1) 0.45s forwards;
+}
+
+.animate-spark-1 {
+  animation: lottie-spark-1 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.5s forwards;
+}
+.animate-spark-2 {
+  animation: lottie-spark-2 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.5s forwards;
+}
+.animate-spark-3 {
+  animation: lottie-spark-3 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.5s forwards;
+}
+.animate-spark-4 {
+  animation: lottie-spark-4 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.5s forwards;
+}
+.animate-spark-5 {
+  animation: lottie-spark-5 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.5s forwards;
+}
+.animate-spark-6 {
+  animation: lottie-spark-6 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.5s forwards;
+}
+
+

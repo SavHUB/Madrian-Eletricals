@@ -1,0 +1,6 @@
+{
+  "name": "Madridian",
+  "description": "Premium London Electrical Engineering, luxury smart home installations, sustainable power, and high-ticket commercial compliance.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

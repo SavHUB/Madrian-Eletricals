@@ -19,38 +19,38 @@
 
 :root {
   --scroll-y: 0px;
-  
-  /* Theme variables for Dark Mode (Default Onyx) */
-  --site-bg: #050505;
-  --text-primary: #F1F5F9;
-  --text-secondary: rgba(255, 255, 255, 0.6);
-  --text-muted: rgba(255, 255, 255, 0.4);
-  --border-subtle: rgba(255, 255, 255, 0.05);
-  --border-glow: rgba(255, 255, 255, 0.1);
-  --card-bg: rgba(255, 255, 255, 0.03);
-  --card-bg-hover: rgba(255, 255, 255, 0.05);
-  --glass-nav-bg: rgba(5, 5, 5, 0.65);
-  --glass-panel-heavy-bg: rgba(5, 5, 5, 0.85);
-  --amber-gold: #F59E0B;
-  --volt: #10B981;
-  --glow-opacity: 0.05;
+
+  /* Theme variables for Dark Mode (Deep Forest Green) */
+  --site-bg: #1E3A2F; /* Deep forest green */
+  --text-primary: #F8F6F0; /* Warm off-white */
+  --text-secondary: rgba(248, 246, 240, 0.62);
+  --text-muted: rgba(248, 246, 240, 0.42);
+  --border-subtle: rgba(248, 246, 240, 0.08);
+  --border-glow: rgba(248, 246, 240, 0.16);
+  --card-bg: rgba(248, 246, 240, 0.04);
+  --card-bg-hover: rgba(248, 246, 240, 0.07);
+  --glass-nav-bg: rgba(30, 58, 47, 0.7);
+  --glass-panel-heavy-bg: rgba(20, 40, 32, 0.88);
+  --amber-gold: #C5973A; /* Brass gold */
+  --volt: #6FBF94; /* Luminous sage-green for live/eco signals */
+  --glow-opacity: 0.06;
 }
 
 html.light {
-  /* Theme variables for Light Luxury Mode */
-  --site-bg: #F8F9FB; /* Luxury light platinum-warm */
-  --text-primary: #0B0F19; /* Deep slate */
-  --text-secondary: rgba(11, 15, 25, 0.7); /* Medium slate */
-  --text-muted: rgba(11, 15, 25, 0.45); /* Soft slate/grey */
-  --border-subtle: rgba(11, 15, 25, 0.06);
-  --border-glow: rgba(11, 15, 25, 0.1);
-  --card-bg: rgba(255, 255, 255, 0.65); /* Richer glass reflection in light */
-  --card-bg-hover: rgba(255, 255, 255, 0.85);
-  --glass-nav-bg: rgba(248, 249, 251, 0.8);
-  --glass-panel-heavy-bg: rgba(255, 255, 255, 0.92);
-  --amber-gold: #D97706; /* Slightly deeper luxury amber for perfect readability in light mode */
-  --volt: #059669; /* Slightly deeper green for contrast */
-  --glow-opacity: 0.08;
+  /* Theme variables for Light Luxury Mode (Warm Off-White) */
+  --site-bg: #F8F6F0; /* Warm off-white */
+  --text-primary: #1E3A2F; /* Deep forest green */
+  --text-secondary: rgba(30, 58, 47, 0.74); /* Medium forest */
+  --text-muted: rgba(30, 58, 47, 0.48); /* Soft forest */
+  --border-subtle: rgba(30, 58, 47, 0.08);
+  --border-glow: rgba(30, 58, 47, 0.14);
+  --card-bg: rgba(255, 255, 255, 0.66); /* Richer glass reflection in light */
+  --card-bg-hover: rgba(255, 255, 255, 0.86);
+  --glass-nav-bg: rgba(248, 246, 240, 0.82);
+  --glass-panel-heavy-bg: rgba(255, 255, 255, 0.94);
+  --amber-gold: #A77E29; /* Slightly deeper brass for perfect readability in light mode */
+  --volt: #2E7D5B; /* Deeper forest-green for contrast */
+  --glow-opacity: 0.09;
 }
 
 @layer base {
@@ -70,20 +70,20 @@ body, header, footer, section, div, h1, h2, h3, h4, p, span, a, button, input, s
 
 /* Custom radial and linear gradient backgrounds */
 .bg-mesh-glow {
-  background-image: 
-    radial-gradient(circle at 15% 15%, rgba(245, 158, 11, var(--glow-opacity, 0.03)) 0%, transparent 45%),
-    radial-gradient(circle at 85% 85%, rgba(16, 185, 129, var(--glow-opacity, 0.03)) 0%, transparent 45%);
+  background-image:
+    radial-gradient(circle at 15% 15%, rgba(197, 151, 58, var(--glow-opacity, 0.03)) 0%, transparent 45%),
+    radial-gradient(circle at 85% 85%, rgba(111, 191, 148, var(--glow-opacity, 0.03)) 0%, transparent 45%);
 }
 
 @keyframes radar-pulse {
   0% {
-    box-shadow: 0 0 0 0 rgba(245, 158, 11, 0.5);
+    box-shadow: 0 0 0 0 rgba(197, 151, 58, 0.5);
   }
   70% {
-    box-shadow: 0 0 0 18px rgba(245, 158, 11, 0);
+    box-shadow: 0 0 0 18px rgba(197, 151, 58, 0);
   }
   100% {
-    box-shadow: 0 0 0 0 rgba(245, 158, 11, 0);
+    box-shadow: 0 0 0 0 rgba(197, 151, 58, 0);
   }
 }
 

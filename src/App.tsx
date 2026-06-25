@@ -138,11 +138,11 @@ function LottieSuccessAnimation() {
   return (
     <div className="relative w-24 h-24 mx-auto mb-6 flex items-center justify-center">
       {/* Tiny Spark Particles radiating from center */}
-      <span className="absolute w-2 h-2 rounded-full bg-emerald-400 animate-spark-1 opacity-0" />
-      <span className="absolute w-2.5 h-2.5 rounded-full bg-amber-400 animate-spark-2 opacity-0" />
+      <span className="absolute w-2 h-2 rounded-full bg-volt animate-spark-1 opacity-0" />
+      <span className="absolute w-2.5 h-2.5 rounded-full bg-amber-gold animate-spark-2 opacity-0" />
       <span className="absolute w-2 h-2 rounded-full bg-volt animate-spark-3 opacity-0" />
-      <span className="absolute w-2 h-2 rounded-full bg-emerald-400 animate-spark-4 opacity-0" />
-      <span className="absolute w-2.5 h-2.5 rounded-full bg-amber-400 animate-spark-5 opacity-0" />
+      <span className="absolute w-2 h-2 rounded-full bg-volt animate-spark-4 opacity-0" />
+      <span className="absolute w-2.5 h-2.5 rounded-full bg-amber-gold animate-spark-5 opacity-0" />
       <span className="absolute w-1.5 h-1.5 rounded-full bg-volt animate-spark-6 opacity-0" />
 
       {/* Main animated checkmark & ring container */}
@@ -369,19 +369,19 @@ export default function App() {
     <div className="min-h-screen bg-onyx text-theme-text-primary font-sans antialiased bg-mesh-glow relative selection:bg-amber-gold selection:text-onyx">
       
       {/* GLOW DECORATIONS - Luxury Radial Backdrops with Parallax */}
-      <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-amber-500/5 rounded-full filter blur-[120px] pointer-events-none parallax-glow-1" />
-      <div className="absolute top-[1200px] right-1/4 w-[600px] h-[600px] bg-emerald-500/5 rounded-full filter blur-[150px] pointer-events-none parallax-glow-2" />
-      <div className="absolute bottom-[800px] left-10 w-[400px] h-[400px] bg-blue-500/5 rounded-full filter blur-[100px] pointer-events-none parallax-glow-3" />
+      <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-amber-gold/5 rounded-full filter blur-[120px] pointer-events-none parallax-glow-1" />
+      <div className="absolute top-[1200px] right-1/4 w-[600px] h-[600px] bg-volt/5 rounded-full filter blur-[150px] pointer-events-none parallax-glow-2" />
+      <div className="absolute bottom-[800px] left-10 w-[400px] h-[400px] bg-amber-gold/5 rounded-full filter blur-[100px] pointer-events-none parallax-glow-3" />
 
       {/* SYSTEM STATUS & TICKER BANNER */}
       <div className="w-full bg-onyx/90 border-b border-theme-border py-2 px-6 sticky top-0 z-50 glass-nav">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-2 text-xs">
           <div className="flex items-center gap-2 bg-theme-text-primary/5 px-3 py-1 rounded-full border border-theme-border">
             <span className="relative flex h-1.5 w-1.5">
-              <span className="animate-pulse absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-emerald-500"></span>
+              <span className="animate-pulse absolute inline-flex h-full w-full rounded-full bg-volt opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-volt"></span>
             </span>
-            <span className="font-mono text-[9px] tracking-wider text-emerald-500 font-bold uppercase">
+            <span className="font-mono text-[9px] tracking-wider text-volt font-bold uppercase">
               System Status: Active Contractors Available Across London Today
             </span>
           </div>
@@ -453,7 +453,7 @@ export default function App() {
             </a>
             <button 
               onClick={() => setIsConsultModalOpen(true)}
-              className="px-5 py-2 bg-amber-gold text-black rounded-sm text-xs font-bold uppercase tracking-widest hover:bg-yellow-400 transition-all cursor-pointer"
+              className="px-5 py-2 bg-amber-gold text-black rounded-sm text-xs font-bold uppercase tracking-widest hover:bg-[#D9B25E] transition-all cursor-pointer"
             >
               Consultation
             </button>
@@ -491,7 +491,7 @@ export default function App() {
                 <div className="absolute -inset-1.5 bg-amber-gold/20 rounded-lg blur-xl animate-pulse"></div>
                 <button 
                   onClick={() => setIsDispatchModalOpen(true)}
-                  className="relative flex items-center justify-center gap-3 px-8 py-4.5 bg-amber-gold text-black font-bold uppercase text-[11px] tracking-widest rounded-sm hover:bg-yellow-400 transition-all duration-300 group cursor-pointer animate-radar font-mono"
+                  className="relative flex items-center justify-center gap-3 px-8 py-4.5 bg-amber-gold text-black font-bold uppercase text-[11px] tracking-widest rounded-sm hover:bg-[#D9B25E] transition-all duration-300 group cursor-pointer animate-radar font-mono"
                 >
                   <span className="relative flex h-2 w-2">
                     <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-600 opacity-75"></span>
@@ -522,7 +522,7 @@ export default function App() {
               </div>
               <div className="flex flex-col col-span-2 sm:col-span-1">
                 <span className="font-mono text-xs text-theme-text-muted uppercase">Accredited Engineers</span>
-                <span className="font-display text-lg font-bold text-emerald-400 mt-1 flex items-center gap-1">
+                <span className="font-display text-lg font-bold text-volt mt-1 flex items-center gap-1">
                   100% Certified
                 </span>
               </div>
@@ -535,7 +535,7 @@ export default function App() {
             <div className="w-full glass-panel rounded-2xl p-6 md:p-8 relative overflow-hidden border border-theme-border shadow-2xl">
               
               {/* Background gradient grid flare */}
-              <div className="absolute top-0 right-0 w-32 h-32 bg-emerald-500/10 rounded-full filter blur-xl pointer-events-none" />
+              <div className="absolute top-0 right-0 w-32 h-32 bg-volt/10 rounded-full filter blur-xl pointer-events-none" />
               
               <div className="flex justify-between items-start mb-6">
                 <div>
@@ -569,20 +569,20 @@ export default function App() {
                       <p className="text-sm font-semibold text-theme-text-primary mt-0.5">8 Fast-Response Crews Free</p>
                     </div>
                   </div>
-                  <span className="px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-400 text-[10px] font-mono">READY</span>
+                  <span className="px-2 py-0.5 rounded bg-volt/10 text-volt text-[10px] font-mono">READY</span>
                 </div>
 
                 <div className="bg-onyx/60 p-4 rounded-xl border border-theme-border flex justify-between items-center">
                   <div className="flex items-center gap-3">
-                    <div className="p-2 bg-blue-500/10 rounded-lg">
-                      <BatteryCharging className="w-4 h-4 text-blue-400" />
+                    <div className="p-2 bg-amber-gold/10 rounded-lg">
+                      <BatteryCharging className="w-4 h-4 text-amber-gold" />
                     </div>
                     <div>
                       <p className="text-xs font-mono text-theme-text-muted">ACTIVE SMART INSTALLS TODAY</p>
                       <p className="text-sm font-semibold text-theme-text-primary mt-0.5">14 High-End Sites Active</p>
                     </div>
                   </div>
-                  <span className="px-2 py-0.5 rounded bg-blue-500/10 text-blue-400 text-[10px] font-mono">ON TIME</span>
+                  <span className="px-2 py-0.5 rounded bg-amber-gold/10 text-amber-gold text-[10px] font-mono">ON TIME</span>
                 </div>
               </div>
 
@@ -645,8 +645,8 @@ export default function App() {
 
             {/* City & Guilds Level 3 */}
             <div className="glass-panel hover:bg-slate-card/60 rounded-xl p-6 transition-all duration-300 flex flex-col items-center text-center border border-theme-border relative group hover:border-theme-text-muted">
-              <div className="w-12 h-12 rounded-lg bg-blue-500/10 flex items-center justify-center mb-4 group-hover:scale-105 transition-transform duration-300">
-                <Award className="w-6 h-6 text-blue-400" />
+              <div className="w-12 h-12 rounded-lg bg-amber-gold/10 flex items-center justify-center mb-4 group-hover:scale-105 transition-transform duration-300">
+                <Award className="w-6 h-6 text-amber-gold" />
               </div>
               <h4 className="font-display font-bold text-theme-text-primary text-sm tracking-wide">CITY & GUILDS LEVEL 3</h4>
               <p className="text-theme-text-secondary text-xs mt-2 font-mono leading-relaxed">
@@ -654,14 +654,14 @@ export default function App() {
                 Inspection & Testing Masters
               </p>
               <div className="absolute top-2 right-2 flex h-1.5 w-1.5">
-                <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-blue-400"></span>
+                <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-amber-gold"></span>
               </div>
             </div>
 
             {/* Part P Compliant */}
-            <div className="glass-panel hover:bg-slate-card/60 rounded-xl p-6 transition-all duration-300 flex flex-col items-center text-center border border-theme-border relative group hover:border-emerald-500/30">
-              <div className="w-12 h-12 rounded-lg bg-emerald-500/10 flex items-center justify-center mb-4 group-hover:scale-105 transition-transform duration-300">
-                <Zap className="w-6 h-6 text-emerald-400" />
+            <div className="glass-panel hover:bg-slate-card/60 rounded-xl p-6 transition-all duration-300 flex flex-col items-center text-center border border-theme-border relative group hover:border-volt/30">
+              <div className="w-12 h-12 rounded-lg bg-volt/10 flex items-center justify-center mb-4 group-hover:scale-105 transition-transform duration-300">
+                <Zap className="w-6 h-6 text-volt" />
               </div>
               <h4 className="font-display font-bold text-theme-text-primary text-sm tracking-wide">PART P COMPLIANT</h4>
               <p className="text-theme-text-secondary text-xs mt-2 font-mono leading-relaxed">
@@ -674,9 +674,9 @@ export default function App() {
             </div>
 
             {/* TrustMark Registered */}
-            <div className="glass-panel hover:bg-slate-card/60 rounded-xl p-6 transition-all duration-300 flex flex-col items-center text-center border border-theme-border relative group hover:border-pink-500/30">
-              <div className="w-12 h-12 rounded-lg bg-pink-500/10 flex items-center justify-center mb-4 group-hover:scale-105 transition-transform duration-300">
-                <CheckCircle className="w-6 h-6 text-pink-400" />
+            <div className="glass-panel hover:bg-slate-card/60 rounded-xl p-6 transition-all duration-300 flex flex-col items-center text-center border border-theme-border relative group hover:border-volt/30">
+              <div className="w-12 h-12 rounded-lg bg-volt/10 flex items-center justify-center mb-4 group-hover:scale-105 transition-transform duration-300">
+                <CheckCircle className="w-6 h-6 text-volt" />
               </div>
               <h4 className="font-display font-bold text-theme-text-primary text-sm tracking-wide">TRUSTMARK REGISTERED</h4>
               <p className="text-theme-text-secondary text-xs mt-2 font-mono leading-relaxed">
@@ -684,7 +684,7 @@ export default function App() {
                 Vetted Quality & Trust
               </p>
               <div className="absolute top-2 right-2 flex h-1.5 w-1.5">
-                <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-pink-400"></span>
+                <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-volt"></span>
               </div>
             </div>
 
@@ -768,11 +768,11 @@ export default function App() {
 
           {/* Card 2: Sustainable Power Systems */}
           <ScrollReveal delay={150}>
-            <Tilt3D className="glass-panel p-8 md:p-10 flex flex-col justify-between group hover:border-emerald-500/30 hover:bg-theme-text-primary/5 transition-all duration-300 relative h-full rounded-xl">
+            <Tilt3D className="glass-panel p-8 md:p-10 flex flex-col justify-between group hover:border-volt/30 hover:bg-theme-text-primary/5 transition-all duration-300 relative h-full rounded-xl">
               <div>
                 {/* Card Header & Serial */}
                 <div className="flex justify-between items-center mb-8">
-                  <div className="w-12 h-12 border border-emerald-500/20 flex items-center justify-center text-emerald-400 font-mono text-sm tracking-wider bg-emerald-500/5 rounded-sm">
+                  <div className="w-12 h-12 border border-volt/20 flex items-center justify-center text-volt font-mono text-sm tracking-wider bg-volt/5 rounded-sm">
                     02
                   </div>
                   <span className="text-[10px] font-mono text-theme-text-muted uppercase tracking-[0.2em]">ECO & SUSTAINABLE</span>
@@ -789,19 +789,19 @@ export default function App() {
                 {/* Bullet Points */}
                 <ul className="space-y-3 mb-8 text-xs font-mono text-theme-text-secondary">
                   <li className="flex items-center gap-2.5">
-                    <Check className="w-3.5 h-3.5 text-emerald-400" />
+                    <Check className="w-3.5 h-3.5 text-volt" />
                     OZEV Approved Commercial & Residential EV Chargers
                   </li>
                   <li className="flex items-center gap-2.5">
-                    <Check className="w-3.5 h-3.5 text-emerald-400" />
+                    <Check className="w-3.5 h-3.5 text-volt" />
                     Tesla Powerwall Integration & Multi-Battery Arrays
                   </li>
                   <li className="flex items-center gap-2.5">
-                    <Check className="w-3.5 h-3.5 text-emerald-400" />
+                    <Check className="w-3.5 h-3.5 text-volt" />
                     High-Yield Micro-Inverter Solar PV Design
                   </li>
                   <li className="flex items-center gap-2.5">
-                    <Check className="w-3.5 h-3.5 text-emerald-400" />
+                    <Check className="w-3.5 h-3.5 text-volt" />
                     Smart Load Shedding & Islanding Backup Panels
                   </li>
                 </ul>
@@ -815,7 +815,7 @@ export default function App() {
                     setConsultService("Sustainable Power Systems");
                     setIsConsultModalOpen(true);
                   }}
-                  className="flex items-center gap-1.5 text-xs font-bold text-emerald-400 uppercase tracking-wider font-mono group-hover:gap-3 transition-all cursor-pointer"
+                  className="flex items-center gap-1.5 text-xs font-bold text-volt uppercase tracking-wider font-mono group-hover:gap-3 transition-all cursor-pointer"
                 >
                   Inquire <ArrowRight className="w-3.5 h-3.5" />
                 </button>
@@ -825,11 +825,11 @@ export default function App() {
 
           {/* Card 3: Corporate Compliance & Diagnostics */}
           <ScrollReveal delay={300}>
-            <Tilt3D className="glass-panel p-8 md:p-10 flex flex-col justify-between group hover:border-blue-500/30 hover:bg-theme-text-primary/5 transition-all duration-300 relative h-full rounded-xl">
+            <Tilt3D className="glass-panel p-8 md:p-10 flex flex-col justify-between group hover:border-amber-gold/30 hover:bg-theme-text-primary/5 transition-all duration-300 relative h-full rounded-xl">
               <div>
                 {/* Card Header & Serial */}
                 <div className="flex justify-between items-center mb-8">
-                  <div className="w-12 h-12 border border-blue-500/20 flex items-center justify-center text-blue-400 font-mono text-sm tracking-wider bg-blue-500/5 rounded-sm">
+                  <div className="w-12 h-12 border border-amber-gold/20 flex items-center justify-center text-amber-gold font-mono text-sm tracking-wider bg-amber-gold/5 rounded-sm">
                     03
                   </div>
                   <span className="text-[10px] font-mono text-theme-text-muted uppercase tracking-[0.2em]">COMMERCIAL & DEFENSIVE</span>
@@ -846,19 +846,19 @@ export default function App() {
                 {/* Bullet Points */}
                 <ul className="space-y-3 mb-8 text-xs font-mono text-theme-text-secondary">
                   <li className="flex items-center gap-2.5">
-                    <Check className="w-3.5 h-3.5 text-blue-400" />
+                    <Check className="w-3.5 h-3.5 text-amber-gold" />
                     FLIR High-Resolution Thermal Imaging Fault-Finding
                   </li>
                   <li className="flex items-center gap-2.5">
-                    <Check className="w-3.5 h-3.5 text-blue-400" />
+                    <Check className="w-3.5 h-3.5 text-amber-gold" />
                     Comprehensive Commercial EICR Certifications
                   </li>
                   <li className="flex items-center gap-2.5">
-                    <Check className="w-3.5 h-3.5 text-blue-400" />
+                    <Check className="w-3.5 h-3.5 text-amber-gold" />
                     Landlord Compliance Auditing & Emergency Lighting
                   </li>
                   <li className="flex items-center gap-2.5">
-                    <Check className="w-3.5 h-3.5 text-blue-400" />
+                    <Check className="w-3.5 h-3.5 text-amber-gold" />
                     Continuous Phase Balance & Power Quality Surveys
                   </li>
                 </ul>
@@ -872,7 +872,7 @@ export default function App() {
                     setConsultService("Corporate Compliance & Diagnostics");
                     setIsConsultModalOpen(true);
                   }}
-                  className="flex items-center gap-1.5 text-xs font-bold text-blue-400 uppercase tracking-wider font-mono group-hover:gap-3 transition-all cursor-pointer"
+                  className="flex items-center gap-1.5 text-xs font-bold text-amber-gold uppercase tracking-wider font-mono group-hover:gap-3 transition-all cursor-pointer"
                 >
                   Inquire <ArrowRight className="w-3.5 h-3.5" />
                 </button>
@@ -997,26 +997,26 @@ export default function App() {
 
                     <div 
                       onClick={() => setIncludeEVCharging(!includeEVCharging)}
-                      className={`p-3 rounded-xl border cursor-pointer flex justify-between items-center transition-all ${includeEVCharging ? "border-emerald-500/50 bg-emerald-500/5 text-theme-text-primary" : "border-theme-border hover:border-theme-text-muted bg-onyx/20 text-theme-text-secondary"}`}
+                      className={`p-3 rounded-xl border cursor-pointer flex justify-between items-center transition-all ${includeEVCharging ? "border-volt/50 bg-volt/5 text-theme-text-primary" : "border-theme-border hover:border-theme-text-muted bg-onyx/20 text-theme-text-secondary"}`}
                     >
                       <div>
                         <p className="text-xs font-bold text-theme-text-primary">EV Smart Charging Hub</p>
                         <p className="text-[10px] text-theme-text-muted">Certified OZEV installation</p>
                       </div>
-                      <div className={`w-4 h-4 rounded-full border flex items-center justify-center text-onyx ${includeEVCharging ? "bg-emerald-400 border-emerald-400" : "border-theme-text-primary/20"}`}>
+                      <div className={`w-4 h-4 rounded-full border flex items-center justify-center text-onyx ${includeEVCharging ? "bg-volt border-volt" : "border-theme-text-primary/20"}`}>
                         {includeEVCharging && <Check className="w-3 h-3 text-onyx stroke-[3]" />}
                       </div>
                     </div>
 
                     <div 
                       onClick={() => setIncludePowerwall(!includePowerwall)}
-                      className={`p-3 rounded-xl border cursor-pointer flex justify-between items-center transition-all ${includePowerwall ? "border-emerald-500/50 bg-emerald-500/5 text-theme-text-primary" : "border-theme-border hover:border-theme-text-muted bg-onyx/20 text-theme-text-secondary"}`}
+                      className={`p-3 rounded-xl border cursor-pointer flex justify-between items-center transition-all ${includePowerwall ? "border-volt/50 bg-volt/5 text-theme-text-primary" : "border-theme-border hover:border-theme-text-muted bg-onyx/20 text-theme-text-secondary"}`}
                     >
                       <div>
                         <p className="text-xs font-bold text-theme-text-primary">Tesla Powerwall Battery</p>
                         <p className="text-[10px] text-theme-text-muted">High capacity smart storage tie-in</p>
                       </div>
-                      <div className={`w-4 h-4 rounded-full border flex items-center justify-center text-onyx ${includePowerwall ? "bg-emerald-400 border-emerald-400" : "border-theme-text-primary/20"}`}>
+                      <div className={`w-4 h-4 rounded-full border flex items-center justify-center text-onyx ${includePowerwall ? "bg-volt border-volt" : "border-theme-text-primary/20"}`}>
                         {includePowerwall && <Check className="w-3 h-3 text-onyx stroke-[3]" />}
                       </div>
                     </div>
@@ -1036,13 +1036,13 @@ export default function App() {
 
                     <div 
                       onClick={() => setIncludeEICR(!includeEICR)}
-                      className={`p-3 rounded-xl border cursor-pointer flex justify-between items-center transition-all ${includeEICR ? "border-blue-500/50 bg-blue-500/5 text-theme-text-primary" : "border-theme-border hover:border-theme-text-muted bg-onyx/20 text-theme-text-secondary"}`}
+                      className={`p-3 rounded-xl border cursor-pointer flex justify-between items-center transition-all ${includeEICR ? "border-amber-gold/50 bg-amber-gold/5 text-theme-text-primary" : "border-theme-border hover:border-theme-text-muted bg-onyx/20 text-theme-text-secondary"}`}
                     >
                       <div>
                         <p className="text-xs font-bold text-theme-text-primary">Diagnostic Testing & EICR</p>
                         <p className="text-[10px] text-theme-text-muted">Continuous testing certification</p>
                       </div>
-                      <div className={`w-4 h-4 rounded-full border flex items-center justify-center text-onyx ${includeEICR ? "bg-blue-400 border-blue-400" : "border-theme-text-primary/20"}`}>
+                      <div className={`w-4 h-4 rounded-full border flex items-center justify-center text-onyx ${includeEICR ? "bg-amber-gold border-amber-gold" : "border-theme-text-primary/20"}`}>
                         {includeEICR && <Check className="w-3 h-3 text-onyx stroke-[3]" />}
                       </div>
                     </div>
@@ -1092,7 +1092,7 @@ export default function App() {
                   </div>
 
                   {calculatorSubmitted ? (
-                    <div className="w-full md:w-auto p-3 bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs rounded-xl font-mono flex items-center gap-2">
+                    <div className="w-full md:w-auto p-3 bg-volt/10 border border-volt/20 text-volt text-xs rounded-xl font-mono flex items-center gap-2">
                       <Check className="w-4 h-4" /> Estimate submitted. We will call you back!
                     </div>
                   ) : (
@@ -1103,7 +1103,7 @@ export default function App() {
                         setIsConsultModalOpen(true);
                         setConsultDetails(`Project Estimate Request: Property classified as ${propertyType}. Options configured: Lutron Works (${includeLutron}), EV charging (${includeEVCharging}), Tesla Powerwall (${includePowerwall}), Solar (${includeSolar}), Diagnostics EICR (${includeEICR}). SLA Priority: ${priorityTier}. Estimated pricing range: ${calculatedEstimate.low} - ${calculatedEstimate.high}.`);
                       }}
-                      className="w-full md:w-auto px-6 py-3.5 bg-amber-gold hover:bg-yellow-400 text-onyx font-bold font-display rounded-xl text-xs uppercase tracking-wider text-center transition-all cursor-pointer"
+                      className="w-full md:w-auto px-6 py-3.5 bg-amber-gold hover:bg-[#D9B25E] text-onyx font-bold font-display rounded-xl text-xs uppercase tracking-wider text-center transition-all cursor-pointer"
                     >
                       Lock In This Estimate & Submit
                     </button>
@@ -1552,7 +1552,7 @@ export default function App() {
 
               <button 
                 type="submit" 
-                className="w-full py-4 bg-amber-gold hover:bg-yellow-400 text-onyx font-bold font-display rounded-xl text-xs uppercase tracking-wider transition-all shadow-lg hover:shadow-amber-gold/5 cursor-pointer"
+                className="w-full py-4 bg-amber-gold hover:bg-[#D9B25E] text-onyx font-bold font-display rounded-xl text-xs uppercase tracking-wider transition-all shadow-lg hover:shadow-amber-gold/5 cursor-pointer"
               >
                 Submit Consultation Request to Lead Engineer
               </button>
@@ -1566,7 +1566,7 @@ export default function App() {
       {/* 3. SUCCESS / CONFIRMATION MODAL */}
       {isSuccessModalOpen && (
         <div className="fixed inset-0 bg-black/60 backdrop-blur-md flex items-center justify-center p-4 z-50">
-          <div className="w-full max-w-md bg-theme-bg glass-panel-heavy rounded-2xl p-6 md:p-8 border border-emerald-500/20 text-center relative animate-in fade-in zoom-in duration-200">
+          <div className="w-full max-w-md bg-theme-bg glass-panel-heavy rounded-2xl p-6 md:p-8 border border-volt/20 text-center relative animate-in fade-in zoom-in duration-200">
             
             <button 
               onClick={() => setIsSuccessModalOpen(false)}
@@ -1578,7 +1578,7 @@ export default function App() {
             <LottieSuccessAnimation />
 
             <h3 className="font-display text-2xl font-extrabold text-theme-text-primary">Transmission Received</h3>
-            <p className="text-sm text-emerald-400 font-mono mt-1">SECURE DISPATCH CONFIRMED</p>
+            <p className="text-sm text-volt font-mono mt-1">SECURE DISPATCH CONFIRMED</p>
             
             <p className="text-theme-text-secondary font-light text-xs md:text-sm mt-4 leading-relaxed">
               Your inquiry has been cataloged. Our Belgravia control panel has assigned your brief to the duty senior electrical engineering architect. Expect immediate contact within our SLA target.
@@ -1587,7 +1587,7 @@ export default function App() {
             <div className="mt-8">
               <button 
                 onClick={() => setIsSuccessModalOpen(false)}
-                className="px-6 py-3 bg-amber-gold hover:bg-yellow-400 text-onyx font-bold font-display text-xs rounded-xl transition-all cursor-pointer"
+                className="px-6 py-3 bg-amber-gold hover:bg-[#D9B25E] text-onyx font-bold font-display text-xs rounded-xl transition-all cursor-pointer"
               >
                 Acknowledge & Close
               </button>

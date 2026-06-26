@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useMemo } from "react";
+import ChatWidget from "./components/ChatWidget";
 import { 
   Zap, 
   Sparkles, 
@@ -1597,6 +1598,7 @@ export default function App() {
         </div>
       )}
 
+      <ChatWidget />
     </div>
   );
 }

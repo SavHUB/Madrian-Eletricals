@@ -1,4 +1,7 @@
-import { generateText, type ModelMessage } from "ai";
+export interface ChatMessage {
+  role: "user" | "assistant";
+  content: string;
+}
 
 export const SYSTEM_PROMPT = `You are the assistant for Meridian Electrical, an NICEIC-approved electrical contractor based in Chiswick, West London. Phone: 07956 234 891. NICEIC No: 2203847. Director: James Okafor.
 
@@ -19,17 +22,36 @@ export const FALLBACK_REPLY =
   "Something went wrong — please call us on 07956 234 891.";
 
 /**
- * Generates an assistant reply using the Vercel AI Gateway.
- * The gateway is authenticated via the AI_GATEWAY_API_KEY environment
- * variable, so no API key is ever exposed to the browser.
+ * Generates an assistant reply using the Groq API.
+ * Authenticated via the server-side GROQ_API_KEY environment variable,
+ * so the key is never exposed to the browser.
  */
 export async function generateChatReply(
-  messages: ModelMessage[]
+  messages: ChatMessage[]
 ): Promise<string> {
-  const { text } = await generateText({
-    model: "openai/gpt-5-mini",
-    system: SYSTEM_PROMPT,
-    messages,
+  const apiKey = process.env.GROQ_API_KEY;
+  if (!apiKey) {
+    throw new Error("GROQ_API_KEY is not set");
+  }
+
+  const res = await fetch("https://api.groq.com/openai/v1/chat/completions", {
+    method: "POST",
+    headers: {
+      Authorization: `Bearer ${apiKey}`,
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      model: "llama-3.3-70b-versatile",
+      max_tokens: 400,
+      messages: [{ role: "system", content: SYSTEM_PROMPT }, ...messages],
+    }),
   });
-  return text?.trim() || FALLBACK_REPLY;
+
+  if (!res.ok) {
+    const detail = await res.text();
+    throw new Error(`Groq API error ${res.status}: ${detail}`);
+  }
+
+  const data = await res.json();
+  return data.choices?.[0]?.message?.content?.trim() || FALLBACK_REPLY;
 }

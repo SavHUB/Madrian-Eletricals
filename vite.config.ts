@@ -4,12 +4,12 @@ import path from 'path';
 import {defineConfig, loadEnv, type Plugin} from 'vite';
 
 // Dev-server middleware that handles the chat endpoint inside the Vite process.
-// This keeps the AI Gateway key on the server (never shipped to the browser)
+// This keeps the Groq API key on the server (never shipped to the browser)
 // and works in environments where only the Vite dev server is running.
 function chatApiPlugin(env: Record<string, string>): Plugin {
-  // Expose the gateway key to the AI SDK running in the Vite process.
-  if (env.AI_GATEWAY_API_KEY) {
-    process.env.AI_GATEWAY_API_KEY = env.AI_GATEWAY_API_KEY;
+  // Expose the Groq key to the chat handler running in the Vite process.
+  if (env.GROQ_API_KEY) {
+    process.env.GROQ_API_KEY = env.GROQ_API_KEY;
   }
 
   return {
